@@ -13,7 +13,7 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and Company Name */}
         <div className="flex">
-          <img src={Logo} alt="CloudPulse Logo" className="h-11 transition-transform hover:scale-105" />
+          <img src={Logo} alt="CloudPulse Logo" className="h-[45px] transition-transform hover:scale-105" />
         </div>
         
         
