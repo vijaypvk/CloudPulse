@@ -9,10 +9,10 @@ function Header() {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 py-3 px-6 bg-black border-b border-gray-800 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="sticky top-0 z-50 py-3 px-10 bg-black border-b border-gray-800 shadow-lg">
+      <div className=" flex justify-between items-center">
         {/* Logo and Company Name */}
-        <div className="flex">
+        <div className="flex ">
           <img src={Logo} alt="CloudPulse Logo" className="h-[45px] transition-transform hover:scale-105" />
         </div>
         

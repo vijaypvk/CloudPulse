@@ -6,7 +6,7 @@ import { BiNetworkChart } from "react-icons/bi";
 import { AiOutlineCloudServer } from "react-icons/ai";
 import Header from '../components/header';
 
-export default function CloudflareWorkersUI() {
+export default function CloudpulseUI() {
   const [code, setCode] = useState(`
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
@@ -20,7 +20,7 @@ async function handleRequest(request) {
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
   const [activeTab, setActiveTab] = useState("console");
-  const [path, setPath] = useState("/");
+  const [path, setPath] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [deployStatus, setDeployStatus] = useState(null);
   const [darkMode, setDarkMode] = useState(true);
@@ -101,7 +101,7 @@ async function handleRequest(request) {
     urlInput: darkMode ? "bg-gray-800 bg-gray-900" : "bg-gray-200 bg-white",
     preview: darkMode ? "bg-white text-black" : "bg-white text-black",
     statusBar: darkMode ? "bg-[#1e1e1e] text-gray-400 border-gray-800" : "bg-gray-200 text-gray-600 border-gray-300",
-    fileTab: darkMode ? "bg-[#1e1e1e] border-gray-700" : "bg-gray-200 border-gray-300",
+    fileTab: darkMode ? "bg-[#252526] border-gray-700" : "bg-gray-200 border-gray-300",
   };
 
   return (
@@ -169,7 +169,7 @@ async function handleRequest(request) {
         {/* Left Panel - Code Editor */}
         <div className="flex-1 flex flex-col">
           {/* File Tab */}
-          <div className={`flex items-center bg-[#252526]`}>
+          <div className={`flex items-center ${themeClasses.fileTab}`}>
             <div className={`px-4 py-2 flex items-center border-r ${themeClasses.fileTab}`}>
               <span className="text-blue-500 text-xs">index.js</span>
               <button className={`ml-2 ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-black"}`}>
@@ -250,7 +250,7 @@ async function handleRequest(request) {
           {activeTab === "preview" && (
             <>
               {/* URL Input */}
-              <div className={`p-2 flex ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}>
+              <div className={`p-2 flex ${ darkMode? "bg-gray-800" : "bg-gray-200"}`}>
                 <div className={`flex-1 rounded flex items-center px-2 ${darkMode ? "bg-gray-900" : "bg-white border border-gray-300"}`}>
                   <span className={darkMode ? "text-gray-400" : "text-gray-600"}>/</span>
                   <input
@@ -270,10 +270,10 @@ async function handleRequest(request) {
                 >
                   {isLoading ? "Running..." : "Execute"}
                 </button>
-              </div>
+              </div>  
 
               {/* Preview Content */}
-              <div className="flex-1 bg-white text-black overflow-auto p-4">
+              <div className="flex-1 bg-[#252526] text-black overflow-auto p-4">
                 {output && <div className="font-mono whitespace-pre-wrap">{output}</div>}
                 {!output && !error && !isLoading && (
                   <div className="text-gray-500 flex flex-col items-center justify-center h-full">
