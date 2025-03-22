@@ -56,7 +56,7 @@ async function handleRequest(request) {
       const response = await fetch("http://localhost:5000/execute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code, language:"javascript" })
+        body: JSON.stringify({ code, language:"python" })
       });
 
       const data = await response.json();
