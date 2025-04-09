@@ -99,7 +99,7 @@ async function handleRequest(request) {
     inactiveTab: darkMode ? "text-gray-400 hover:bg-gray-800" : "text-gray-600 hover:bg-gray-300",
     console: darkMode ? "bg-[#1e1e1e] text-white" : "bg-white text-gray-900",
     urlInput: darkMode ? "bg-gray-800 bg-gray-900" : "bg-gray-200 bg-white",
-    preview: darkMode ? "bg-white text-black" : "bg-white text-black",
+    preview: darkMode ? "bg-[#252526]" : "bg-white text-black",
     statusBar: darkMode ? "bg-[#1e1e1e] text-gray-400 border-gray-800" : "bg-gray-200 text-gray-600 border-gray-300",
     fileTab: darkMode ? "bg-[#252526] border-gray-700" : "bg-gray-200 border-gray-300",
   };
@@ -171,7 +171,7 @@ async function handleRequest(request) {
           {/* File Tab */}
           <div className={`flex items-center ${themeClasses.fileTab}`}>
             <div className={`px-4 py-2 flex items-center border-r ${themeClasses.fileTab}`}>
-              <span className="text-blue-500 text-xs">index.js</span>
+              <span className="text-blue-500 text-xs">index.py</span>
               <button className={`ml-2 ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-black"}`}>
                 <VscChromeClose size={14} />
               </button>
@@ -182,7 +182,7 @@ async function handleRequest(request) {
             <div className="absolute inset-0">
               <Editor
                 height="100%"
-                defaultLanguage="javascript"
+                defaultLanguage="python"
                 theme={darkMode ? "vs-dark" : "light"}
                 value={code}
                 onChange={(value) => setCode(value || "")}
@@ -273,7 +273,7 @@ async function handleRequest(request) {
               </div>  
 
               {/* Preview Content */}
-              <div className="flex-1 bg-[#252526] text-black overflow-auto p-4">
+              <div className={`flex-1 text-black overflow-auto p-4 ${themeClasses.preview}`}>
                 {output && <div className="font-mono whitespace-pre-wrap">{output}</div>}
                 {!output && !error && !isLoading && (
                   <div className="text-gray-500 flex flex-col items-center justify-center h-full">

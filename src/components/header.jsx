@@ -49,10 +49,7 @@ function Header() {
             <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-blue-500"></span>
           </button>
           
-          {/* Deploy Button */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors hidden md:block font-medium">
-            Deploy
-          </button>
+          
           
           {/* Profile Menu */}
           <div className="relative">
@@ -67,8 +64,8 @@ function Header() {
               <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-gray-900 ring-1 ring-black ring-opacity-5">
                 <div className="py-1" role="menu">
                   <div className="px-4 py-2 border-b border-gray-800">
-                    <p className="text-sm font-medium text-white">John Parker</p>
-                    <p className="text-xs text-gray-400">john@example.com</p>
+                    <p className="text-sm font-medium text-white">vijay krishnaa </p>
+                    <p className="text-xs text-gray-400">vijaypvk001@gmail.com</p>
                   </div>
                   <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white">Your Profile</a>
                   <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white">Settings</a>
